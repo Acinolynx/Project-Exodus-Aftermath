@@ -35,8 +35,8 @@
 [ext_resource type="PackedScene" uid="uid://w02dhjlknae6" path="res://Scene/Model/Decoration/Cross Wood.tscn" id="31_w5n83"]
 [ext_resource type="PackedScene" uid="uid://dxcrm3krn1n1f" path="res://Scene/Model/Tree/Pine Fall.tscn" id="32_amjce"]
 [ext_resource type="Texture2D" uid="uid://c4ggdp0kg5wjk" path="res://addons/simplegrasstextured/textures/grassbushcc008.png" id="32_j6eeo"]
-[ext_resource type="PackedScene" uid="uid://byme26k3cqaob" path="res://Scene/Model/Zombie/Zombie.tscn" id="32_rylia"]
 [ext_resource type="Script" path="res://addons/simplegrasstextured/grass.gd" id="33_2dkug"]
+[ext_resource type="PackedScene" uid="uid://c10ob6epvnd3s" path="res://Scene/Model/Weapon/m_1911.tscn" id="34_s7mty"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lnvxe"]
 albedo_color = Color(0.419608, 0.419608, 0.419608, 1)
@@ -85,7 +85,7 @@ uv1_triplanar = true
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jtj3s"]
 points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607, 0.498884, 0.169713, 0.559144, 0.464172, 0.231051, -0.803591, 0.320455, 0.40741, 0.651043, -0.243523, -0.482789, 0.594843, 0.0822132, -0.362868, -0.682312, 0.289697, 0.469044, -0.654529, -0.0662713, -0.127444, 0.842701, -0.338103, -0.393435, -0.683942, -0.244717, 0.438255, 0.623309, 0.200849, 0.0841477, 0.977454, 0.114795, -0.0682023, -0.976458, -0.12927, 0.20055, -0.563129, -0.451454, -0.185527, 0.595453, -0.453475, -0.273363, 0.592268, 0.407754, -0.00693649, -0.476823, 0.49966, 0.375821, -0.588614, 0.316955, 0.111579, 0.563059, -0.481177, -0.41725, 0.527866, -0.270497, -0.484546, -0.596972, -0.0665097, -0.279747, 0.908561, 0.0533361, -0.250197, -0.880712, 0.205319, 0.263647, -0.902771, -0.127394, 0.293368, 0.871526, -0.157196, 0.373412, -0.526319, -0.328246, 0.499663, 0.476641, -0.00688856, 0.0531056, 0.875001, 0.324703, -0.154543, -0.590854, 0.465879, -0.0972799, -0.782358, -0.398188, -0.387649, -0.498171, 0.31565, -0.30068, -0.587995, -0.388901)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ywppw"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fcd3v"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("31_nhs3w")
@@ -120,7 +120,7 @@ _surfaces = [{
 "format": 34359742495,
 "index_count": 12,
 "index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 3, 0, 1, 0, 0, 0, 4, 0, 5, 0, 6, 0, 7, 0, 5, 0, 4, 0),
-"material": SubResource("ShaderMaterial_ywppw"),
+"material": SubResource("ShaderMaterial_fcd3v"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 8,
@@ -2269,24 +2269,6 @@ transform = Transform3D(-4, 0, -3.49691e-07, 0, 4, 0, 3.49691e-07, 0, -4, 17.369
 [node name="gravestone-broken7" parent="Map/NavigationRegion3D/Grave2/Gravestone" instance=ExtResource("20_xfkst")]
 transform = Transform3D(-4, 0, -3.49691e-07, 0, 4, 0, 3.49691e-07, 0, -4, 10.3699, 0, 14.4763)
 
-[node name="Zombie" parent="Map/NavigationRegion3D" instance=ExtResource("32_rylia")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -5, 0, 0)
-
-[node name="Zombie2" parent="Map/NavigationRegion3D" instance=ExtResource("32_rylia")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -6, 0, 0)
-
-[node name="Zombie3" parent="Map/NavigationRegion3D" instance=ExtResource("32_rylia")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -7, 0, 0)
-
-[node name="Zombie4" parent="Map/NavigationRegion3D" instance=ExtResource("32_rylia")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -7, 0, 1)
-
-[node name="Zombie5" parent="Map/NavigationRegion3D" instance=ExtResource("32_rylia")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -6, 0, 1)
-
-[node name="Zombie6" parent="Map/NavigationRegion3D" instance=ExtResource("32_rylia")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -5, 0, 1)
-
 [node name="Player" type="CharacterBody3D" parent="Map/NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.5214, 0.497509, -0.2406)
 floor_max_angle = 1.0472
@@ -2304,6 +2286,9 @@ shape = SubResource("ConvexPolygonShape3D_jtj3s")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1.73027, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Map/NavigationRegion3D/Player/Head"]
+
+[node name="M1911" parent="Map/NavigationRegion3D/Player/Head/Camera3D" instance=ExtResource("34_s7mty")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.6171, -0.316661, -1.08774)
 
 [node name="SimpleGrassTextured" type="MultiMeshInstance3D" parent="Map"]
 multimesh = SubResource("MultiMesh_8obgy")
@@ -2476,8 +2461,8 @@ visible = false
 layout_mode = 0
 offset_left = -91.0
 offset_top = -76.0
-offset_right = 1246.0
-offset_bottom = 732.0
+offset_right = 4749.0
+offset_bottom = 2804.0
 color = Color(0.890196, 0, 0, 0.392157)
 
 [node name="ZombieSpawnTimer" type="Timer" parent="."]

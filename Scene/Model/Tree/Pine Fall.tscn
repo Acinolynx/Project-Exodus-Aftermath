@@ -46,6 +46,7 @@ data = PackedVector3Array(0.0847, 0.19, 0.1467, 0.106, 0, 0.1836, -0.106, 0, 0.1
 [node name="pine-fall2" type="StaticBody3D"]
 
 [node name="pine-fall" type="MeshInstance3D" parent="."]
+layers = 3
 mesh = SubResource("ArrayMesh_osb6d")
 skeleton = NodePath("")
 

@@ -46,6 +46,7 @@ points = PackedVector3Array(0.296342, 0.2052, -0.250098, 0.296342, 0, -0.250098,
 [node name="coffin-old2" type="StaticBody3D"]
 
 [node name="coffin-old" type="MeshInstance3D" parent="."]
+layers = 3
 mesh = SubResource("ArrayMesh_mxyp4")
 skeleton = NodePath("")
 

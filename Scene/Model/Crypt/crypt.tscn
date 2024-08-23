@@ -50,6 +50,7 @@ data = PackedVector3Array(0.2347, 0.0784, -0.3864, 0.2347, 0.3304, -0.3864, 0.23
 
 [node name="crypt" type="MeshInstance3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+layers = 3
 mesh = SubResource("ArrayMesh_txvyd")
 skeleton = NodePath("")
 

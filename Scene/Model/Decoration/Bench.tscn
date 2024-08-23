@@ -48,6 +48,7 @@ points = PackedVector3Array(0.384675, 0.548955, -0.143035, 0.384675, 0.3194, 0.1
 [node name="bench2" type="StaticBody3D"]
 
 [node name="bench" type="MeshInstance3D" parent="."]
+layers = 3
 mesh = SubResource("ArrayMesh_kgehb")
 skeleton = NodePath("")
 

@@ -46,6 +46,7 @@ points = PackedVector3Array(-0.168667, 0.573709, -0.115393, -0.168667, 0.566857,
 [node name="shovel-dirt2" type="StaticBody3D"]
 
 [node name="shovel-dirt" type="MeshInstance3D" parent="."]
+layers = 3
 mesh = SubResource("ArrayMesh_wfatv")
 skeleton = NodePath("")
 

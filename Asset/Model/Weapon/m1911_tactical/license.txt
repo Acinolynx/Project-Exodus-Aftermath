@@ -1,0 +1,8 @@
+Model Information:
+* title:	M1911 Tactical
+* source:	https://sketchfab.com/3d-models/m1911-tactical-3b5582fc8aab444cab205e22800de5d9
+* author:	B4TU (https://sketchfab.com/B4TU)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

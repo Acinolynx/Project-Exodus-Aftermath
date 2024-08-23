@@ -46,6 +46,7 @@ points = PackedVector3Array(-0.215, 0, -0.215, 0.215, 0, -0.215, -0.215, 0, 0.21
 [node name="cross-wood2" type="StaticBody3D"]
 
 [node name="cross-wood" type="MeshInstance3D" parent="."]
+layers = 3
 mesh = SubResource("ArrayMesh_udrbf")
 skeleton = NodePath("")
 

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Revolver Magnum 357 (桜)
+* source:	https://sketchfab.com/3d-models/revolver-magnum-357-0434342de92946a38513566d2d6963ae
+* author:	MaliNova (https://sketchfab.com/AngelaVioleci)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Revolver Magnum 357 (桜)" (https://sketchfab.com/3d-models/revolver-magnum-357-0434342de92946a38513566d2d6963ae) by MaliNova (https://sketchfab.com/AngelaVioleci) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

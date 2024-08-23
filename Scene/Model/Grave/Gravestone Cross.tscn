@@ -46,6 +46,7 @@ points = PackedVector3Array(-0.220769, 0, -0.145632, -0.220769, 0, 0.145632, -0.
 [node name="gravestone-cross2" type="StaticBody3D"]
 
 [node name="gravestone-cross" type="MeshInstance3D" parent="."]
+layers = 3
 mesh = SubResource("ArrayMesh_es42m")
 skeleton = NodePath("")
 

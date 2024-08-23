@@ -46,6 +46,7 @@ points = PackedVector3Array(0.21823, 0.08, -0.112949, 0.21823, 0, -0.112949, 0.1
 [node name="debris2" type="StaticBody3D"]
 
 [node name="debris" type="MeshInstance3D" parent="."]
+layers = 3
 mesh = SubResource("ArrayMesh_wi6i7")
 skeleton = NodePath("")
 

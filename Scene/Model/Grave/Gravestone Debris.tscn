@@ -46,6 +46,7 @@ points = PackedVector3Array(0.301768, 0.166272, -0.453676, 0.301768, -5.63993e-1
 [node name="gravestone-debris2" type="StaticBody3D"]
 
 [node name="gravestone-debris" type="MeshInstance3D" parent="."]
+layers = 3
 mesh = SubResource("ArrayMesh_nfrvu")
 skeleton = NodePath("")
 

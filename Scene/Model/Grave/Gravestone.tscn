@@ -48,6 +48,7 @@ points = PackedVector3Array(-0.22, 0, -0.09975, -0.22, 0, 0.09975, -0.22, 0.0779
 [node name="gravestone-bevel2" type="StaticBody3D"]
 
 [node name="gravestone-bevel" type="MeshInstance3D" parent="."]
+layers = 3
 mesh = SubResource("ArrayMesh_gx717")
 skeleton = NodePath("")
 
