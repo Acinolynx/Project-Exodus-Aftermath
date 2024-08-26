@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cegic7oe7oagy"]
+[gd_scene load_steps=5 format=3 uid="uid://cegic7oe7oagy"]
 
 [ext_resource type="Texture2D" uid="uid://bn43exmnx36sb" path="res://Asset/Model/Graveyard Kit/Textures/colormap.png" id="1_l8sct"]
 
@@ -41,16 +41,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_g7ee5")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ixvwf"]
-points = PackedVector3Array(0.378388, 0, 0.192777, 0.364684, 0.0160227, 0.200633, 0.359868, 0, 0.261788, 0.276309, 0, -0.167372, 0.265123, 0.0433152, -0.156204, 0.265123, 0.0433152, 0.374161, 0.351942, 0.0160227, 0.248078, 0.276309, 0, 0.385329, 0.182823, 0, -0.37502, 0.169119, 0.0160227, -0.367087, 0.163637, 0.0320497, -0.280284, -0.0845224, 0.0433152, -0.257717, 0.0844483, 0.0433152, 0.374161, -0.228307, 0, 0.393339, 0.113783, 0, -0.393428, 0.121709, 0.0160227, -0.379795, -0.265272, 0.0433152, -0.257717, -0.257716, 0.0320497, 0.280196, -0.220455, 0.0160227, 0.379706, -0.141192, 0.0433152, 0.148567, -0.268901, 0, 0.291364, -0.276383, 0, -0.362851, -0.265272, 0.0160227, -0.351683, -0.364758, 0.0160227, -0.118926, -0.265272, 0.0433152, -0.0770267, -0.378388, 0, -0.126859)
-
 [node name="road2" type="StaticBody3D"]
 
 [node name="road" type="MeshInstance3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.00594866, 0, 0)
 mesh = SubResource("ArrayMesh_7k0sw")
 skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.00594866, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_ixvwf")

@@ -2,7 +2,9 @@ extends CharacterBody3D
 
 var player = null
 var state_machine
-var HEALTH = 6 
+var HEALTH = 25
+
+signal zombie_hit
 
 const SPEED = 8.0
 const ATTACK_RANGE = 2.5
@@ -49,6 +51,7 @@ func _hit_finished():
 
 func _on_area_3d_body_part_hit(dam):
 	HEALTH -= dam
+	emit_signal("zombie_hit")
 	if HEALTH <= 0:
 		anim_tree.set("parameters/conditions/die", true)
 		await get_tree().create_timer(4.0).timeout

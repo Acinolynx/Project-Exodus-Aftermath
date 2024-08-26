@@ -56,5 +56,5 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_d3bs5")
 
 [node name="grave-border2" parent="." instance=ExtResource("2_uuq1q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0389683, 0, -0.000753522)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0389683, -0.0276662, -0.000753522)
 visible = false

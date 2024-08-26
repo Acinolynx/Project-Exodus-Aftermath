@@ -24,12 +24,30 @@ var gravity = 9.8
 
 #bullet
 var bullet = load("res://Scene/Model/Bullet/bullet.tscn")
+var bullet_trail = load("res://Scene/Model/Bullet/bullet_trail.tscn")
 var instance
 
+#wep switch
+enum weapons {
+	PISTOL,
+	AUTO
+}
+
+var weapon = weapons.AUTO
+var can_shoot = true
+@onready var weapon_switching = $Head/Camera3D/WeaponSwitching
+
+#cam
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
+@onready var aim_ray = $Head/Camera3D/AimRay
+@onready var aim_ray_end = $Head/Camera3D/AimRayEnd
+
+#weapon
 @onready var gun_anim = $Head/Camera3D/M1911/AnimationPlayer
 @onready var gun_barrel = $Head/Camera3D/M1911/RayCast3D
+@onready var auto_anim = $Head/Camera3D/Vector/AnimationPlayer
+@onready var auto_barrel = $Head/Camera3D/Vector/Sketchfab_model/Barrel
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -81,14 +99,19 @@ func _physics_process(delta):
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 	
 	#shooting
-	if Input.is_action_pressed("shoot"):
-		if !gun_anim.is_playing():
-			gun_anim.play("Shoot")
-			instance = bullet.instantiate()
-			instance.position = gun_barrel.global_position
-			instance.transform.basis = gun_barrel.global_transform.basis
-			get_parent().add_child(instance)
-	
+	if Input.is_action_pressed("shoot") and can_shoot:
+		match weapon:
+			weapons.PISTOL:
+				_shoot_pistol()
+			weapons.AUTO:
+				_shoot_auto()
+				
+	#weapon Switch
+	if Input.is_action_just_pressed("weapon_one") and weapon != weapons.PISTOL:
+		_raise_weapon(weapons.PISTOL)
+	if Input.is_action_just_pressed("weapon_two") and weapon != weapons.AUTO:
+		_raise_weapon(weapons.AUTO)
+			
 	move_and_slide()
 
 
@@ -101,3 +124,51 @@ func _headbob(time) -> Vector3:
 func hit(dir):
 	emit_signal("player_hit")
 	velocity += dir * HIT_STAGGER
+	
+func _shoot_pistol():
+	if !gun_anim.is_playing():
+			gun_anim.play("Shoot")
+			instance = bullet.instantiate()
+			instance.position = gun_barrel.global_position
+			get_parent().add_child(instance)
+			if aim_ray.is_colliding():
+				instance.set_velocity(aim_ray.get_collision_point())
+			else:
+				instance.set_velocity(aim_ray_end.global_position)
+				
+func _shoot_auto():
+	if !auto_anim.is_playing():
+			auto_anim.play("Shoot")
+			instance = bullet_trail.instantiate()
+			if aim_ray.is_colliding():
+				instance.init(auto_barrel.global_position, aim_ray.get_collision_point())
+				get_parent().add_child(instance)
+				if aim_ray.get_collider().is_in_group("enemy"):
+					aim_ray.get_collider().hit()
+					instance.trigger_particles(aim_ray.get_collision_point(),
+												auto_barrel.global_position, true)
+				else:
+					instance.trigger_particles(aim_ray.get_collision_point(),
+												auto_barrel.global_position, false)
+			else:
+				instance.init(auto_barrel.global_position, aim_ray_end.global_position)
+			get_parent().add_child(instance)
+			
+func _lower_weapon():
+	match weapon:
+		weapons.AUTO:
+			weapon_switching.play("LowerAuto")
+		weapons.PISTOL:
+			weapon_switching.play("LowerPistol")
+			
+func _raise_weapon(new_weapon):
+	can_shoot = false
+	_lower_weapon()
+	await get_tree().create_timer(0.3).timeout
+	match  new_weapon:
+		weapons.AUTO:
+			weapon_switching.play_backwards("LowerAuto")
+		weapons.PISTOL:
+			weapon_switching.play_backwards("LowerPistol")
+	weapon = new_weapon
+	can_shoot = true

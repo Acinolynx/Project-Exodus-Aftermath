@@ -1,8 +1,11 @@
 extends Node3D
 
-@onready var hit_rect = $UI/ColorRect
+@onready var hit_rect = $UI/HitRect
 @onready var spawns = $Map/Spawns
 @onready var navigation_region = $Map/NavigationRegion3D
+
+@onready var crosshair = $UI/Croshair
+@onready var crosshair_hit = $UI/CroshairHit
 
 var zombie = load("res://Scene/Model/Zombie/ZombieChibi.tscn")
 var instance 
@@ -11,6 +14,10 @@ var instance
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
+	crosshair.position.x = get_viewport().size.x / 2 - 36
+	crosshair.position.y = get_viewport().size.y / 2 - 36
+	crosshair_hit.position.x = get_viewport().size.x / 2 - 36
+	crosshair_hit.position.y = get_viewport().size.y / 2 - 36
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -32,4 +39,12 @@ func _on_zombie_spawn_timer_timeout():
 	var spawn_point = _get_random_child(spawns).global_position
 	instance = zombie.instantiate()
 	instance.position = spawn_point
+	instance.visible = false
+	instance.zombie_hit.connect(_on_enemy_hit)
 	navigation_region.add_child(instance)
+
+
+func _on_enemy_hit():
+	crosshair_hit.visible = true
+	await get_tree().create_timer(0.05).timeout
+	crosshair_hit.visible = false
