@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://fj2jyxwaxkry"]
+[gd_scene load_steps=57 format=3 uid="uid://fj2jyxwaxkry"]
 
 [ext_resource type="Texture2D" uid="uid://dkj1imudjstgv" path="res://Asset/Texture/_freepicdownloader.com_-ground-seamless-texture-soil-scary-background-with-bones-skull-game-design-wallpaper-large-transformed.jpeg" id="1_3a7nh"]
 [ext_resource type="Script" path="res://Script/Player.gd" id="1_3w8bx"]
@@ -40,6 +40,7 @@
 [ext_resource type="PackedScene" uid="uid://tt5ndyl6ax2q" path="res://Scene/Model/Weapon/Vector.tscn" id="35_7rxjg"]
 [ext_resource type="Texture2D" uid="uid://dnqm80nq5srh3" path="res://Asset/Model/Weapon/Crosshair/crosshair007.png" id="39_6y8hd"]
 [ext_resource type="Texture2D" uid="uid://dib24kfybd58o" path="res://Asset/Model/Weapon/Crosshair/crosshair084.png" id="40_duetk"]
+[ext_resource type="PackedScene" uid="uid://b1gkpvypi0qvx" path="res://Asset/Model/Zombie Chibi/Zombie.glb" id="41_u3tvw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lnvxe"]
 albedo_color = Color(0.419608, 0.419608, 0.419608, 1)
@@ -127,7 +128,7 @@ _data = {
 "LowerPistol": SubResource("Animation_bnf2e")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hmxyc"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oe1j4"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("31_nhs3w")
@@ -162,7 +163,7 @@ _surfaces = [{
 "format": 34359742495,
 "index_count": 12,
 "index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 3, 0, 1, 0, 0, 0, 4, 0, 5, 0, 6, 0, 7, 0, 5, 0, 4, 0),
-"material": SubResource("ShaderMaterial_hmxyc"),
+"material": SubResource("ShaderMaterial_oe1j4"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 8,
@@ -2538,6 +2539,46 @@ texture = ExtResource("39_6y8hd")
 [node name="ZombieSpawnTimer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
+
+[node name="Zombie" parent="." instance=ExtResource("41_u3tvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.978, 0.000999451, -1.28273)
+visible = false
+
+[node name="Zombie2" parent="." instance=ExtResource("41_u3tvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.6656, 0.000999928, -0.746278)
+visible = false
+
+[node name="Zombie3" parent="." instance=ExtResource("41_u3tvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5797, 0.0010004, -0.779889)
+visible = false
+
+[node name="Zombie4" parent="." instance=ExtResource("41_u3tvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.8955, 0.000999928, -0.957651)
+visible = false
+
+[node name="Zombie5" parent="." instance=ExtResource("41_u3tvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.626, 0.000999928, -0.262461)
+visible = false
+
+[node name="Zombie6" parent="." instance=ExtResource("41_u3tvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.1263, 0.000999928, -0.129583)
+visible = false
+
+[node name="Zombie7" parent="." instance=ExtResource("41_u3tvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.5447, 0.000999928, 0.71575)
+visible = false
+
+[node name="Zombie8" parent="." instance=ExtResource("41_u3tvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.3674, 0.000999928, 0.52726)
+visible = false
+
+[node name="Zombie9" parent="." instance=ExtResource("41_u3tvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.3853, 0.000999451, 0.280806)
+visible = false
+
+[node name="Zombie10" parent="." instance=ExtResource("41_u3tvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.6196, 0.000999928, 0.0478987)
+visible = false
 
 [connection signal="player_hit" from="Map/NavigationRegion3D/Player" to="." method="_on_player_player_hit"]
 [connection signal="timeout" from="ZombieSpawnTimer" to="." method="_on_zombie_spawn_timer_timeout"]
